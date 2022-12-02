@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@section sideBar{
+    <aside>@ViewBag.Message</aside>
+}
+
+
+@ViewBag.Fecha
+
+<p>
+    @Html.ActionLink("Ir a Empleados", "Index", "Empleado")
+</p>
+
+
+

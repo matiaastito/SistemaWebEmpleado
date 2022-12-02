@@ -1,0 +1,31 @@
+﻿@model SistemaWebEmpleado.Models.Empleado
+
+@{
+    ViewData["Title"] = "Modificar";
+}
+
+<div>
+    @using (Html.BeginForm("Edit", "Empleado", FormMethod.Post))
+    {
+        @Html.HiddenFor(model => model.EmpleadoId)
+        @Html.HiddenFor(model => model.Dni)
+        @Html.HiddenFor(model => model.Nombre)
+        <p>
+            @Html.LabelFor(model => model.Apellido)
+            @Html.EditorFor(model => model.Apellido)
+            @Html.ValidationMessageFor(model => model.Apellido)
+        </p>
+        <p>
+            @Html.LabelFor(model => model.Titulo)
+            @Html.EditorFor(model => model.Titulo)
+            @Html.ValidationMessageFor(model => model.Titulo)
+        </p>
+        <p>
+            @Html.LabelFor(model => model.Legajo)
+            @Html.EditorFor(model => model.Legajo)
+            @Html.ValidationMessageFor(model => model.Legajo)
+        </p>
+        <input type="submit" value="Modificar" />
+        @Html.ActionLink("Regresar al indice", "Index", "Empleado")
+    }
+</div>
